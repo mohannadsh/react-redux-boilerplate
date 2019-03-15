@@ -9,6 +9,9 @@ class App extends Component {
                     <p>
                         Here is the start page of your app!
                     </p>
+                    <p>
+                        This environment is {process.env.REACT_APP_ENV}
+                    </p>
                 </header>
             </div>
         );
