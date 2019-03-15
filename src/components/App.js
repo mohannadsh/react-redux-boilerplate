@@ -1,5 +1,8 @@
 import React, {Component} from "react";
-import "./styles/app.scss";
+import "../styles/app.scss";
+
+import {connect} from "react-redux";
+import UserComponent from './user.component'
 
 class App extends Component {
     render() {
@@ -12,10 +15,19 @@ class App extends Component {
                     <p>
                         This environment is {process.env.REACT_APP_ENV}
                     </p>
+
+                    <UserComponent/>
                 </header>
             </div>
         );
     }
 }
 
-export default App;
+const mapStateToProps = (state, props) => {
+    return state;
+};
+
+const mapActionsToProps = {
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(App);
