@@ -10,6 +10,13 @@ class UserComponent extends Component {
         super(props);
 
         this.onUpdateUser = this.onUpdateUser.bind(this);
+
+        if (this.props.match) {
+            this.userId = this.props.match.params.id;
+        }
+
+        console.log(this.userId)
+
     }
 
     onUpdateUser(event) {
@@ -26,7 +33,7 @@ class UserComponent extends Component {
                 This is the User Component ({this.props.user})
                 <br/>
 
-                <div>{this.props.user}</div>
+                <div>{this.props.user} <span hidden={!this.userId}>(ID: {this.userId})</span></div>
                 <input onChange={this.onUpdateUser} value={this.props.user}/>
             </div>
         );
